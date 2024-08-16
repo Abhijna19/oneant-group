@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #toggle-buttons {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Group Management</h1>
+
+        <!-- Create Group Section -->
+        <div id="create-group-section">
+            <h2>Create a Group</h2>
+            <form id="create-group-form">
+                <label for="group-name">Group Name:</label>
+                <input type="text" id="group-name" name="group-name" required>
+
+                <label for="group-description">Group Description:</label>
+                <input type="text" id="group-description" name="group-description">
+
+                <button type="submit">Create</button>
+            </form>
+            <div id="create-group-share-options" class="hidden">
+                <h3>Group Created Successfully!</h3>
+                <button onclick="shareViaLink()">Share via Link</button>
+                <button onclick="inviteViaEmail()">Invite via Email</button>
+                <button onclick="shareOnSocialMedia()">Share on Social Media</button>
+            </div>
+        </div>
+
+        <!-- Join Group Section -->
+        <div id="join-group-section" class="hidden">
+            <h2>Join a Group</h2>
+            <form id="join-group-form">
+                <label for="group-code">Enter Group Code/Link:</label>
+                <input type="text" id="group-code" name="group-code" required>
+
+                <button type="submit">Join</button>
+            </form>
+            <div id="join-group-confirmation" class="hidden">
+                <h3>Successfully Joined the Group!</h3>
+                <button onclick="copyCode()">Copy Code/Link</button>
+                <button onclick="inviteViaEmail()">Invite via Email</button>
+            </div>
+        </div>
+
+        <!-- Toggle Buttons -->
+        <div id="toggle-buttons">
+            <button onclick="showCreateGroup()">Create a Group</button>
+            <button onclick="showJoinGroup()">Join a Group</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('create-group-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Implement group creation logic here
+            document.getElementById('create-group-share-options').classList.remove('hidden');
+        });
+
+        document.getElementById('join-group-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Implement group joining logic here
+            document.getElementById('join-group-confirmation').classList.remove('hidden');
+        });
+
+        function showCreateGroup() {
+            document.getElementById('create-group-section').classList.remove('hidden');
+            document.getElementById('join-group-section').classList.add('hidden');
+        }
+
+        function showJoinGroup() {
+            document.getElementById('create-group-section').classList.add('hidden');
+            document.getElementById('join-group-section').classList.remove('hidden');
+        }
+
+        function shareViaLink() {
+            // Implement share via link functionality here
+            alert('Share via Link functionality is not implemented.');
+        }
+
+        function inviteViaEmail() {
+            // Implement invite via email functionality here
+            alert('Invite via Email functionality is not implemented.');
+        }
+
+        function shareOnSocialMedia() {
+            // Implement share on social media functionality here
+            alert('Share on Social Media functionality is not implemented.');
+        }
+
+        function copyCode() {
+            // Implement copy code/link functionality here
+            alert('Copy Code/Link functionality is not implemented.');
+        }
+    </script>
+</body>
+</html>
